@@ -1,0 +1,3226 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <title>AutoVD Test Report</title>
+ <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c439bdbc7bade3d85af3b90e9e69c30ebc87445f/commons/img/logo.png">
+ <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c439bdbc7bade3d85af3b90e9e69c30ebc87445f/commons/img/logo.png">
+ <link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@78fa5a2421587b8228150e93142e5ba97178e85b/spark/css/spark-style.css" rel="stylesheet" />
+ <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+ <script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@78fa5a2421587b8228150e93142e5ba97178e85b/spark/js/jsontree.js"></script>
+ <style></style>
+</head>
+<body class="spa  standard">
+ <div class="app">
+  <div class="layout">
+   <div class="header navbar">
+ <div class="vheader">
+  <div class="nav-logo">
+   <a href="#">
+	 <div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c43b89d03a7c43dae8bb8f0f078bad1997af6b3b/commons/img/logo.png')"></div>
+   </a>
+  </div>
+  <ul class="nav-left">
+   <li class="search-box">
+	<a class="search-toggle" href="#"><i class="search-icon fa fa-search"></i><i class="search-icon-close fa fa-close"></i></a>
+   </li>
+   <li class="search-input">
+    <input id="search-tests" class="form-control" type="text" placeholder="Search...">
+   </li>
+  </ul>
+  <ul class="nav-right">
+   <li class="m-r-10"><a href="#"><span class="badge badge-primary">SauceDemo Automation Report</span></a></li>
+   <li class="m-r-10">
+    <a href="#"><span class="badge badge-primary">03/05/2026 8:25:39 PM</span></a>
+   </li>
+  </ul>
+ </div>
+</div>
+   <div class="side-nav">
+ <div class="side-nav-inner">
+  <ul class="side-nav-menu">
+   <li class="nav-item dropdown" onclick="toggleView('test-view')">
+    <a id="nav-test" class="dropdown-toggle" href="#">
+     <span class="ico"><i class="fa fa-list"></i></span>
+    </a>
+   </li>
+    <li class="nav-item dropdown" onclick="toggleView('category-view')">
+     <a id="nav-category" class="dropdown-toggle" href="#">
+      <span class="ico"><i class="fa fa-tag"></i></span>
+     </a>
+    </li>
+    <li class="nav-item dropdown" onclick="toggleView('author-view')">
+     <a id="nav-author" class="dropdown-toggle" href="#">
+      <span class="ico"><i class="fa fa-user"></i></span>
+     </a>
+    </li>
+    <li class="nav-item dropdown" onclick="toggleView('device-view')">
+     <a id="nav-device" class="dropdown-toggle" href="#">
+      <span class="ico"><i class="fa fa-tablet"></i></span>
+     </a>
+    </li>
+   <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+    <a id="nav-dashboard" class="dropdown-toggle" href="#">
+     <span class="ico"><i class="fa fa-bar-chart"></i></span>
+    </a>
+   </li>
+  </ul>
+ </div>
+</div>
+
+   <div class="vcontainer">
+    <div class="main-content">
+     
+
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+      <ul class="tools pull-left">
+        <li><a href="#"><span class="font-size-14">Tests</span></a></li>
+      </ul>
+      <ul class="tools text-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+          <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+ <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>             <div class="dropdown-divider"></div>
+            <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i></a>
+          <ul id="author-toggle" class="dropdown-menu dropdown-md p-v-0">
+ <a class="dropdown-item" href="#">Vignesh</a>           </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+          <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+ <a class="dropdown-item" href="#">E2E</a>  <a class="dropdown-item" href="#">Login</a>  <a class="dropdown-item" href="#">LoginTests</a>  <a class="dropdown-item" href="#">Regression</a>  <a class="dropdown-item" href="#">E2ETests</a>           </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tablet"></i></a>
+          <ul id="device-toggle" class="dropdown-menu dropdown-md p-v-0">
+ <a class="dropdown-item" href="#">WebKit</a>  <a class="dropdown-item" href="#">Firefox</a>  <a class="dropdown-item" href="#">Chromium</a>           </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item" status="pass" test-id="1"
+          author="Vignesh "
+          tag="LoginTests Login Regression "
+          device="Chromium ">
+          <div class="test-detail">
+            <p class="name">FailedLogin_AsInvalidUser</p>
+            <p class="text-sm">
+              <span>8:25:40 PM</span> / <span>447.37 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">FailedLogin_AsInvalidUser</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:40 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:41 PM</span>
+                  <span class='badge badge-default'>447.37 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> LoginTests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Login</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> Chromium</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:40</td>
+        <td>
+Browser: Chromium        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:40</td>
+        <td>
+Test Class: LoginTests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:40</td>
+        <td>
+Navigating to login page        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:40</td>
+        <td>
+Attempting login as InvalidUser        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Verifying error message is displayed        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="2"
+          author="Vignesh "
+          tag="E2ETests E2E Regression "
+          device="Chromium ">
+          <div class="test-detail">
+            <p class="name">CompletePurchaseFlow</p>
+            <p class="text-sm">
+              <span>8:25:40 PM</span> / <span>667.41 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CompletePurchaseFlow</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:40 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:41 PM</span>
+                  <span class='badge badge-default'>667.41 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> E2ETests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> E2E</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> Chromium</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:40</td>
+        <td>
+Browser: Chromium        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:40</td>
+        <td>
+Test Class: E2ETests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:40</td>
+        <td>
+Logging in as StandardUser        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Verifying inventory page loaded        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Adding 'Sauce Labs Backpack' to cart        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Adding 'Sauce Labs Bike Light' to cart        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Cart badge shows 2 items        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Navigating to cart        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Cart contains 2 items        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Proceeding to checkout        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Entering checkout information        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Verifying checkout overview        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Subtotal: Item total: $45.98        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Completing purchase        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Verifying order completion        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Completion message: Thank you for your order!        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Returning to inventory page        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="3"
+          author="Vignesh "
+          tag="E2ETests E2E Regression "
+          device="WebKit ">
+          <div class="test-detail">
+            <p class="name">CompletePurchaseFlow</p>
+            <p class="text-sm">
+              <span>8:25:41 PM</span> / <span>1007.73 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CompletePurchaseFlow</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:41 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:42 PM</span>
+                  <span class='badge badge-default'>1007.73 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> E2ETests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> E2E</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> WebKit</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Browser: WebKit        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Test Class: E2ETests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Logging in as StandardUser        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Verifying inventory page loaded        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Adding 'Sauce Labs Backpack' to cart        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Adding 'Sauce Labs Bike Light' to cart        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Cart badge shows 2 items        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Navigating to cart        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Cart contains 2 items        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Proceeding to checkout        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Entering checkout information        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Verifying checkout overview        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Subtotal: Item total: $45.98        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Completing purchase        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Verifying order completion        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Completion message: Thank you for your order!        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Returning to inventory page        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="4"
+          author="Vignesh "
+          tag="LoginTests Login Regression "
+          device="WebKit ">
+          <div class="test-detail">
+            <p class="name">FailedLogin_AsInvalidUser</p>
+            <p class="text-sm">
+              <span>8:25:41 PM</span> / <span>914.91 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">FailedLogin_AsInvalidUser</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:41 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:42 PM</span>
+                  <span class='badge badge-default'>914.91 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> LoginTests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Login</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> WebKit</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Browser: WebKit        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Test Class: LoginTests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:41</td>
+        <td>
+Navigating to login page        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Attempting login as InvalidUser        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Verifying error message is displayed        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="5"
+          author="Vignesh "
+          tag="E2ETests E2E Regression "
+          device="Firefox ">
+          <div class="test-detail">
+            <p class="name">CompletePurchaseFlow</p>
+            <p class="text-sm">
+              <span>8:25:42 PM</span> / <span>821.79 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CompletePurchaseFlow</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:42 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:43 PM</span>
+                  <span class='badge badge-default'>821.79 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> E2ETests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> E2E</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> Firefox</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Browser: Firefox        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Test Class: E2ETests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Logging in as StandardUser        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Verifying inventory page loaded        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:42</td>
+        <td>
+Adding 'Sauce Labs Backpack' to cart        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:43</td>
+        <td>
+Adding 'Sauce Labs Bike Light' to cart        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:43</td>
+        <td>
+Cart badge shows 2 items        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:43</td>
+        <td>
+Navigating to cart        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:43</td>
+        <td>
+Cart contains 2 items        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:43</td>
+        <td>
+Proceeding to checkout        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:43</td>
+        <td>
+Entering checkout information        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:43</td>
+        <td>
+Verifying checkout overview        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:43</td>
+        <td>
+Subtotal: Item total: $45.98        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:43</td>
+        <td>
+Completing purchase        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:43</td>
+        <td>
+Verifying order completion        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:43</td>
+        <td>
+Completion message: Thank you for your order!        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:43</td>
+        <td>
+Returning to inventory page        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:43</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="6"
+          author="Vignesh "
+          tag="LoginTests Login Regression "
+          device="Firefox ">
+          <div class="test-detail">
+            <p class="name">FailedLogin_AsInvalidUser</p>
+            <p class="text-sm">
+              <span>8:25:43 PM</span> / <span>591.11 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">FailedLogin_AsInvalidUser</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:43 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:43 PM</span>
+                  <span class='badge badge-default'>591.11 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> LoginTests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Login</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> Firefox</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:43</td>
+        <td>
+Browser: Firefox        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:43</td>
+        <td>
+Test Class: LoginTests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:43</td>
+        <td>
+Navigating to login page        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:43</td>
+        <td>
+Attempting login as InvalidUser        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:43</td>
+        <td>
+Verifying error message is displayed        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:43</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="7"
+          author="Vignesh "
+          tag="LoginTests Login Regression "
+          device="Chromium ">
+          <div class="test-detail">
+            <p class="name">FailedLogin_AsLockedOutUser</p>
+            <p class="text-sm">
+              <span>8:25:44 PM</span> / <span>543.42 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">FailedLogin_AsLockedOutUser</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:44 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:45 PM</span>
+                  <span class='badge badge-default'>543.42 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> LoginTests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Login</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> Chromium</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:44</td>
+        <td>
+Browser: Chromium        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:44</td>
+        <td>
+Test Class: LoginTests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:44</td>
+        <td>
+Navigating to login page        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:45</td>
+        <td>
+Attempting login as LockedOutUser        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:45</td>
+        <td>
+Verifying error message is displayed        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:45</td>
+        <td>
+Error message: Epic sadface: Sorry, this user has been locked out.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:45</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="8"
+          author="Vignesh "
+          tag="E2ETests E2E Regression "
+          device="Chromium ">
+          <div class="test-detail">
+            <p class="name">LogoutFlow</p>
+            <p class="text-sm">
+              <span>8:25:44 PM</span> / <span>1390.09 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">LogoutFlow</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:44 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:46 PM</span>
+                  <span class='badge badge-default'>1390.09 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> E2ETests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> E2E</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> Chromium</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:44</td>
+        <td>
+Browser: Chromium        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:44</td>
+        <td>
+Test Class: E2ETests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:44</td>
+        <td>
+Logging in as StandardUser        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:45</td>
+        <td>
+Logging out        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Verifying redirected to login page        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Current URL: https://www.saucedemo.com/        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="9"
+          author="Vignesh "
+          tag="E2ETests E2E Regression "
+          device="WebKit ">
+          <div class="test-detail">
+            <p class="name">LogoutFlow</p>
+            <p class="text-sm">
+              <span>8:25:45 PM</span> / <span>1663.05 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">LogoutFlow</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:45 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:47 PM</span>
+                  <span class='badge badge-default'>1663.05 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> E2ETests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> E2E</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> WebKit</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:45</td>
+        <td>
+Browser: WebKit        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:45</td>
+        <td>
+Test Class: E2ETests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:45</td>
+        <td>
+Logging in as StandardUser        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Logging out        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Verifying redirected to login page        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Current URL: https://www.saucedemo.com/        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="10"
+          author="Vignesh "
+          tag="LoginTests Login Regression "
+          device="WebKit ">
+          <div class="test-detail">
+            <p class="name">FailedLogin_AsLockedOutUser</p>
+            <p class="text-sm">
+              <span>8:25:45 PM</span> / <span>549.15 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">FailedLogin_AsLockedOutUser</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:45 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:45 PM</span>
+                  <span class='badge badge-default'>549.15 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> LoginTests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Login</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> WebKit</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:45</td>
+        <td>
+Browser: WebKit        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:45</td>
+        <td>
+Test Class: LoginTests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:45</td>
+        <td>
+Navigating to login page        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:45</td>
+        <td>
+Attempting login as LockedOutUser        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:45</td>
+        <td>
+Verifying error message is displayed        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:45</td>
+        <td>
+Error message: Epic sadface: Sorry, this user has been locked out.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:45</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="11"
+          author="Vignesh "
+          tag="LoginTests Login Regression "
+          device="Chromium ">
+          <div class="test-detail">
+            <p class="name">FailedLogin_WithEmptyCredentials</p>
+            <p class="text-sm">
+              <span>8:25:46 PM</span> / <span>403.79 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">FailedLogin_WithEmptyCredentials</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:46 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:46 PM</span>
+                  <span class='badge badge-default'>403.79 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> LoginTests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Login</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> Chromium</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Browser: Chromium        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Test Class: LoginTests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Navigating to login page        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Clicking login without entering credentials        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Verifying error message is displayed        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Error message: Epic sadface: Username is required        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="12"
+          author="Vignesh "
+          tag="E2ETests E2E Regression "
+          device="Firefox ">
+          <div class="test-detail">
+            <p class="name">LogoutFlow</p>
+            <p class="text-sm">
+              <span>8:25:46 PM</span> / <span>1497.93 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">LogoutFlow</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:46 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:47 PM</span>
+                  <span class='badge badge-default'>1497.93 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> E2ETests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> E2E</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> Firefox</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Browser: Firefox        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Test Class: E2ETests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Logging in as StandardUser        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Logging out        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Verifying redirected to login page        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Current URL: https://www.saucedemo.com/        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="13"
+          author="Vignesh "
+          tag="LoginTests Login Regression "
+          device="Firefox ">
+          <div class="test-detail">
+            <p class="name">FailedLogin_AsLockedOutUser</p>
+            <p class="text-sm">
+              <span>8:25:46 PM</span> / <span>514.41 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">FailedLogin_AsLockedOutUser</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:46 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:47 PM</span>
+                  <span class='badge badge-default'>514.41 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> LoginTests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Login</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> Firefox</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Browser: Firefox        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Test Class: LoginTests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Navigating to login page        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Attempting login as LockedOutUser        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Verifying error message is displayed        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Error message: Epic sadface: Sorry, this user has been locked out.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="14"
+          author="Vignesh "
+          tag="E2ETests E2E Regression "
+          device="Chromium ">
+          <div class="test-detail">
+            <p class="name">VerifyInventoryItems</p>
+            <p class="text-sm">
+              <span>8:25:46 PM</span> / <span>502.78 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">VerifyInventoryItems</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:46 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:47 PM</span>
+                  <span class='badge badge-default'>502.78 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> E2ETests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> E2E</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> Chromium</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Browser: Chromium        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Test Class: E2ETests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:46</td>
+        <td>
+Logging in as StandardUser        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Found 6 inventory items        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Verifying first product details        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+First item: Sauce Labs Backpack - $29.99        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="15"
+          author="Vignesh "
+          tag="LoginTests Login Regression "
+          device="WebKit ">
+          <div class="test-detail">
+            <p class="name">FailedLogin_WithEmptyCredentials</p>
+            <p class="text-sm">
+              <span>8:25:47 PM</span> / <span>661.67 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">FailedLogin_WithEmptyCredentials</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:47 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:48 PM</span>
+                  <span class='badge badge-default'>661.67 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> LoginTests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Login</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> WebKit</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Browser: WebKit        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Test Class: LoginTests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Navigating to login page        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Clicking login without entering credentials        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:48</td>
+        <td>
+Verifying error message is displayed        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:48</td>
+        <td>
+Error message: Epic sadface: Username is required        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:48</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="16"
+          author="Vignesh "
+          tag="LoginTests Login Regression "
+          device="Chromium ">
+          <div class="test-detail">
+            <p class="name">SuccessfulLogin_AsStandardUser</p>
+            <p class="text-sm">
+              <span>8:25:47 PM</span> / <span>829.86 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">SuccessfulLogin_AsStandardUser</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:47 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:48 PM</span>
+                  <span class='badge badge-default'>829.86 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> LoginTests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Login</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> Chromium</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Browser: Chromium        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Test Class: LoginTests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:47</td>
+        <td>
+Navigating to login page        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:48</td>
+        <td>
+Logging in as StandardUser        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:48</td>
+        <td>
+Verifying inventory page loaded        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:48</td>
+        <td>
+Verifying inventory items are displayed        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:48</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="17"
+          author="Vignesh "
+          tag="E2ETests E2E Regression "
+          device="WebKit ">
+          <div class="test-detail">
+            <p class="name">VerifyInventoryItems</p>
+            <p class="text-sm">
+              <span>8:25:48 PM</span> / <span>390.38 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">VerifyInventoryItems</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:48 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:48 PM</span>
+                  <span class='badge badge-default'>390.38 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> E2ETests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> E2E</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> WebKit</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:48</td>
+        <td>
+Browser: WebKit        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:48</td>
+        <td>
+Test Class: E2ETests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:48</td>
+        <td>
+Logging in as StandardUser        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:48</td>
+        <td>
+Found 6 inventory items        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:48</td>
+        <td>
+Verifying first product details        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:48</td>
+        <td>
+First item: Sauce Labs Backpack - $29.99        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:48</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="18"
+          author="Vignesh "
+          tag="LoginTests Login Regression "
+          device="WebKit ">
+          <div class="test-detail">
+            <p class="name">SuccessfulLogin_AsStandardUser</p>
+            <p class="text-sm">
+              <span>8:25:49 PM</span> / <span>348.24 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">SuccessfulLogin_AsStandardUser</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:49 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:49 PM</span>
+                  <span class='badge badge-default'>348.24 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> LoginTests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Login</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> WebKit</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:49</td>
+        <td>
+Browser: WebKit        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:49</td>
+        <td>
+Test Class: LoginTests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:49</td>
+        <td>
+Navigating to login page        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:49</td>
+        <td>
+Logging in as StandardUser        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:49</td>
+        <td>
+Verifying inventory page loaded        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:49</td>
+        <td>
+Verifying inventory items are displayed        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:49</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="19"
+          author="Vignesh "
+          tag="LoginTests Login Regression "
+          device="Firefox ">
+          <div class="test-detail">
+            <p class="name">FailedLogin_WithEmptyCredentials</p>
+            <p class="text-sm">
+              <span>8:25:49 PM</span> / <span>530.64 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">FailedLogin_WithEmptyCredentials</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:49 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:50 PM</span>
+                  <span class='badge badge-default'>530.64 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> LoginTests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Login</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> Firefox</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:49</td>
+        <td>
+Browser: Firefox        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:49</td>
+        <td>
+Test Class: LoginTests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:49</td>
+        <td>
+Navigating to login page        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:50</td>
+        <td>
+Clicking login without entering credentials        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:50</td>
+        <td>
+Verifying error message is displayed        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:50</td>
+        <td>
+Error message: Epic sadface: Username is required        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:50</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="20"
+          author="Vignesh "
+          tag="E2ETests E2E Regression "
+          device="Firefox ">
+          <div class="test-detail">
+            <p class="name">VerifyInventoryItems</p>
+            <p class="text-sm">
+              <span>8:25:50 PM</span> / <span>479.22 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">VerifyInventoryItems</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:50 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:50 PM</span>
+                  <span class='badge badge-default'>479.22 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> E2ETests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> E2E</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> Firefox</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:50</td>
+        <td>
+Browser: Firefox        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:50</td>
+        <td>
+Test Class: E2ETests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:50</td>
+        <td>
+Logging in as StandardUser        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:50</td>
+        <td>
+Found 6 inventory items        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:50</td>
+        <td>
+Verifying first product details        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:50</td>
+        <td>
+First item: Sauce Labs Backpack - $29.99        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:50</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="21"
+          author="Vignesh "
+          tag="LoginTests Login Regression "
+          device="Firefox ">
+          <div class="test-detail">
+            <p class="name">SuccessfulLogin_AsStandardUser</p>
+            <p class="text-sm">
+              <span>8:25:52 PM</span> / <span>400.67 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">SuccessfulLogin_AsStandardUser</h5>
+                  <span class='badge badge-success'>03/05/2026 8:25:52 PM</span>
+                  <span class='badge badge-danger'>03/05/2026 8:25:52 PM</span>
+                  <span class='badge badge-default'>400.67 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=21</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-15"> <span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Vignesh</span>   <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> LoginTests</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Login</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span>  <span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> Firefox</span>  </div>               </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:52</td>
+        <td>
+Browser: Firefox        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:52</td>
+        <td>
+Test Class: LoginTests        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:52</td>
+        <td>
+Navigating to login page        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:52</td>
+        <td>
+Logging in as StandardUser        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:52</td>
+        <td>
+Verifying inventory page loaded        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>03-05-2026 20:25:52</td>
+        <td>
+Verifying inventory items are displayed        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>03-05-2026 20:25:52</td>
+        <td>
+Test Passed        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="test-content scrollable">
+    <div class="test-content-tools">
+      <ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+    </div>
+    <div class="test-content-detail"><div class="detail-body"></div></div>
+  </div>
+</div>
+
+
+<div class="test-wrapper row view category-view attributes-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+      <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+      <ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">5</span></a></li></ul>
+    </div>
+    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item">
+          <div class="test-detail">
+            <span class="meta">
+ <span class='badge log pass-bg'>9</span>             </span>
+            <p class="name">E2E</p>
+            <p class="duration text-sm">9 tests</p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="info">
+              <h4>E2E</h4>
+ <span status="pass" class='badge log pass-bg'>9 passed</span>             </div>
+            <table class='table table-sm mt-4'>
+              <thead>
+                <tr>
+                  <th class="status-col">Status</th>
+                  <th class="timestamp-col">Timestamp</th>
+                  <th>TestName</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:40 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='2' id='2'>CompletePurchaseFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:41 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='3' id='3'>CompletePurchaseFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:42 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='5' id='5'>CompletePurchaseFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:44 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='8' id='8'>LogoutFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:45 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='9' id='9'>LogoutFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='12' id='12'>LogoutFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='14' id='14'>VerifyInventoryItems</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:48 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='17' id='17'>VerifyInventoryItems</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:50 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='20' id='20'>VerifyInventoryItems</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+        <li class="test-item">
+          <div class="test-detail">
+            <span class="meta">
+ <span class='badge log pass-bg'>12</span>             </span>
+            <p class="name">Login</p>
+            <p class="duration text-sm">12 tests</p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="info">
+              <h4>Login</h4>
+ <span status="pass" class='badge log pass-bg'>12 passed</span>             </div>
+            <table class='table table-sm mt-4'>
+              <thead>
+                <tr>
+                  <th class="status-col">Status</th>
+                  <th class="timestamp-col">Timestamp</th>
+                  <th>TestName</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:40 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='1' id='1'>FailedLogin_AsInvalidUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:41 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='4' id='4'>FailedLogin_AsInvalidUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:43 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='6' id='6'>FailedLogin_AsInvalidUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:44 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='7' id='7'>FailedLogin_AsLockedOutUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:45 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='10' id='10'>FailedLogin_AsLockedOutUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='11' id='11'>FailedLogin_WithEmptyCredentials</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='13' id='13'>FailedLogin_AsLockedOutUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:47 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='15' id='15'>FailedLogin_WithEmptyCredentials</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:47 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='16' id='16'>SuccessfulLogin_AsStandardUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:49 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='18' id='18'>SuccessfulLogin_AsStandardUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:49 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='19' id='19'>FailedLogin_WithEmptyCredentials</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:52 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='21' id='21'>SuccessfulLogin_AsStandardUser</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+        <li class="test-item">
+          <div class="test-detail">
+            <span class="meta">
+ <span class='badge log pass-bg'>12</span>             </span>
+            <p class="name">LoginTests</p>
+            <p class="duration text-sm">12 tests</p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="info">
+              <h4>LoginTests</h4>
+ <span status="pass" class='badge log pass-bg'>12 passed</span>             </div>
+            <table class='table table-sm mt-4'>
+              <thead>
+                <tr>
+                  <th class="status-col">Status</th>
+                  <th class="timestamp-col">Timestamp</th>
+                  <th>TestName</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:40 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='1' id='1'>FailedLogin_AsInvalidUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:41 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='4' id='4'>FailedLogin_AsInvalidUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:43 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='6' id='6'>FailedLogin_AsInvalidUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:44 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='7' id='7'>FailedLogin_AsLockedOutUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:45 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='10' id='10'>FailedLogin_AsLockedOutUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='11' id='11'>FailedLogin_WithEmptyCredentials</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='13' id='13'>FailedLogin_AsLockedOutUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:47 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='15' id='15'>FailedLogin_WithEmptyCredentials</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:47 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='16' id='16'>SuccessfulLogin_AsStandardUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:49 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='18' id='18'>SuccessfulLogin_AsStandardUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:49 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='19' id='19'>FailedLogin_WithEmptyCredentials</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:52 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='21' id='21'>SuccessfulLogin_AsStandardUser</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+        <li class="test-item">
+          <div class="test-detail">
+            <span class="meta">
+ <span class='badge log pass-bg'>21</span>             </span>
+            <p class="name">Regression</p>
+            <p class="duration text-sm">21 tests</p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="info">
+              <h4>Regression</h4>
+ <span status="pass" class='badge log pass-bg'>21 passed</span>             </div>
+            <table class='table table-sm mt-4'>
+              <thead>
+                <tr>
+                  <th class="status-col">Status</th>
+                  <th class="timestamp-col">Timestamp</th>
+                  <th>TestName</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:40 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='1' id='1'>FailedLogin_AsInvalidUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:40 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='2' id='2'>CompletePurchaseFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:41 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='3' id='3'>CompletePurchaseFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:41 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='4' id='4'>FailedLogin_AsInvalidUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:42 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='5' id='5'>CompletePurchaseFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:43 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='6' id='6'>FailedLogin_AsInvalidUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:44 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='7' id='7'>FailedLogin_AsLockedOutUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:44 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='8' id='8'>LogoutFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:45 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='9' id='9'>LogoutFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:45 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='10' id='10'>FailedLogin_AsLockedOutUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='11' id='11'>FailedLogin_WithEmptyCredentials</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='12' id='12'>LogoutFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='13' id='13'>FailedLogin_AsLockedOutUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='14' id='14'>VerifyInventoryItems</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:47 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='15' id='15'>FailedLogin_WithEmptyCredentials</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:47 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='16' id='16'>SuccessfulLogin_AsStandardUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:48 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='17' id='17'>VerifyInventoryItems</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:49 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='18' id='18'>SuccessfulLogin_AsStandardUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:49 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='19' id='19'>FailedLogin_WithEmptyCredentials</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:50 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='20' id='20'>VerifyInventoryItems</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:52 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='21' id='21'>SuccessfulLogin_AsStandardUser</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+        <li class="test-item">
+          <div class="test-detail">
+            <span class="meta">
+ <span class='badge log pass-bg'>9</span>             </span>
+            <p class="name">E2ETests</p>
+            <p class="duration text-sm">9 tests</p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="info">
+              <h4>E2ETests</h4>
+ <span status="pass" class='badge log pass-bg'>9 passed</span>             </div>
+            <table class='table table-sm mt-4'>
+              <thead>
+                <tr>
+                  <th class="status-col">Status</th>
+                  <th class="timestamp-col">Timestamp</th>
+                  <th>TestName</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:40 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='2' id='2'>CompletePurchaseFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:41 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='3' id='3'>CompletePurchaseFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:42 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='5' id='5'>CompletePurchaseFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:44 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='8' id='8'>LogoutFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:45 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='9' id='9'>LogoutFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='12' id='12'>LogoutFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='14' id='14'>VerifyInventoryItems</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:48 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='17' id='17'>VerifyInventoryItems</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:50 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='20' id='20'>VerifyInventoryItems</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="test-content scrollable">
+    <div class="test-content-detail">
+      <div class="detail-body"></div>
+    </div>
+  </div>
+</div>
+
+<div class="test-wrapper row view author-view attributes-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+      <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Author</span></a></li></ul>
+      <ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+    </div>
+    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item">
+          <div class="test-detail">
+            <span class="meta">
+ <span class='badge log pass-bg'>21</span>             </span>
+            <p class="name">Vignesh</p>
+            <p class="duration text-sm">21 tests</p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="info">
+              <h4>Vignesh</h4>
+ <span status="pass" class='badge log pass-bg'>21 passed</span>             </div>
+            <table class='table table-sm mt-4'>
+              <thead>
+                <tr>
+                  <th class="status-col">Status</th>
+                  <th class="timestamp-col">Timestamp</th>
+                  <th>TestName</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:40 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='1' id='1'>FailedLogin_AsInvalidUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:40 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='2' id='2'>CompletePurchaseFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:41 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='3' id='3'>CompletePurchaseFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:41 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='4' id='4'>FailedLogin_AsInvalidUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:42 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='5' id='5'>CompletePurchaseFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:43 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='6' id='6'>FailedLogin_AsInvalidUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:44 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='7' id='7'>FailedLogin_AsLockedOutUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:44 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='8' id='8'>LogoutFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:45 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='9' id='9'>LogoutFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:45 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='10' id='10'>FailedLogin_AsLockedOutUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='11' id='11'>FailedLogin_WithEmptyCredentials</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='12' id='12'>LogoutFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='13' id='13'>FailedLogin_AsLockedOutUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='14' id='14'>VerifyInventoryItems</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:47 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='15' id='15'>FailedLogin_WithEmptyCredentials</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:47 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='16' id='16'>SuccessfulLogin_AsStandardUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:48 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='17' id='17'>VerifyInventoryItems</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:49 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='18' id='18'>SuccessfulLogin_AsStandardUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:49 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='19' id='19'>FailedLogin_WithEmptyCredentials</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:50 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='20' id='20'>VerifyInventoryItems</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:52 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='21' id='21'>SuccessfulLogin_AsStandardUser</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="test-content scrollable">
+    <div class="test-content-detail">
+      <div class="detail-body"></div>
+    </div>
+  </div>
+</div>
+
+<div class="test-wrapper row view device-view attributes-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+      <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Device</span></a></li></ul>
+      <ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">3</span></a></li></ul>
+    </div>
+    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item">
+          <div class="test-detail">
+            <span class="meta">
+ <span class='badge log pass-bg'>7</span>             </span>
+            <p class="name">WebKit</p>
+            <p class="duration text-sm">7 tests</p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="info">
+              <h4>WebKit</h4>
+ <span status="pass" class='badge log pass-bg'>7 passed</span>             </div>
+            <table class='table table-sm mt-4'>
+              <thead>
+                <tr>
+                  <th class="status-col">Status</th>
+                  <th class="timestamp-col">Timestamp</th>
+                  <th>TestName</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:41 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='3' id='3'>CompletePurchaseFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:41 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='4' id='4'>FailedLogin_AsInvalidUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:45 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='9' id='9'>LogoutFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:45 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='10' id='10'>FailedLogin_AsLockedOutUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:47 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='15' id='15'>FailedLogin_WithEmptyCredentials</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:48 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='17' id='17'>VerifyInventoryItems</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:49 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='18' id='18'>SuccessfulLogin_AsStandardUser</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+        <li class="test-item">
+          <div class="test-detail">
+            <span class="meta">
+ <span class='badge log pass-bg'>7</span>             </span>
+            <p class="name">Firefox</p>
+            <p class="duration text-sm">7 tests</p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="info">
+              <h4>Firefox</h4>
+ <span status="pass" class='badge log pass-bg'>7 passed</span>             </div>
+            <table class='table table-sm mt-4'>
+              <thead>
+                <tr>
+                  <th class="status-col">Status</th>
+                  <th class="timestamp-col">Timestamp</th>
+                  <th>TestName</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:42 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='5' id='5'>CompletePurchaseFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:43 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='6' id='6'>FailedLogin_AsInvalidUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='12' id='12'>LogoutFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='13' id='13'>FailedLogin_AsLockedOutUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:49 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='19' id='19'>FailedLogin_WithEmptyCredentials</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:50 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='20' id='20'>VerifyInventoryItems</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:52 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='21' id='21'>SuccessfulLogin_AsStandardUser</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+        <li class="test-item">
+          <div class="test-detail">
+            <span class="meta">
+ <span class='badge log pass-bg'>7</span>             </span>
+            <p class="name">Chromium</p>
+            <p class="duration text-sm">7 tests</p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="info">
+              <h4>Chromium</h4>
+ <span status="pass" class='badge log pass-bg'>7 passed</span>             </div>
+            <table class='table table-sm mt-4'>
+              <thead>
+                <tr>
+                  <th class="status-col">Status</th>
+                  <th class="timestamp-col">Timestamp</th>
+                  <th>TestName</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:40 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='1' id='1'>FailedLogin_AsInvalidUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:40 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='2' id='2'>CompletePurchaseFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:44 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='7' id='7'>FailedLogin_AsLockedOutUser</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:44 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='8' id='8'>LogoutFlow</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='11' id='11'>FailedLogin_WithEmptyCredentials</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:46 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='14' id='14'>VerifyInventoryItems</a>
+                  </td>
+                </tr>
+                <tr class="tag-test-status" status="pass">
+                  <td><span class="badge log pass-bg">Pass</span></td>
+                  <td>8:25:47 PM</td>
+                  <td>
+                    <a href="#" class="linked" test-id='16' id='16'>SuccessfulLogin_AsStandardUser</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="test-content scrollable">
+    <div class="test-content-detail">
+      <div class="detail-body"></div>
+    </div>
+  </div>
+</div>
+     
+
+<div class="container-fluid p-4 view dashboard-view">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card"><div class="card-body">
+          <p class="m-b-0">Started</p>
+          <h3>03/05/2026 8:25:39 PM</h3>
+      </div></div>
+    </div>
+    <div class="col-md-3">
+      <div class="card"><div class="card-body">
+          <p class="m-b-0">Ended</p>
+          <h3>03/05/2026 8:25:53 PM</h3>
+      </div></div>
+    </div>
+    <div class="col-md-3">
+      <div class="card"><div class="card-body">
+          <p class="m-b-0 text-pass">Tests Passed</p>
+          <h3>21</h3>
+      </div></div>
+    </div>
+    <div class="col-md-3">
+      <div class="card"><div class="card-body">
+          <p class="m-b-0 text-fail">Tests Failed</p>
+          <h3>0</h3>
+      </div></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h6 class="card-title">Tests</h6>
+        </div>
+        <div class="card-body">
+          <div class="">
+            <canvas id='parent-analysis' width='115' height='90'></canvas>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div><small data-tooltip='1%'>
+            <b>21</b> tests passed
+            </small>
+          </div>
+          <div>
+            <small data-tooltip='0%'><b>0</b> tests failed, 
+            <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h6 class="card-title">Log events</h6>
+        </div>
+        <div class="card-body">
+          <div class="">
+            <canvas id='events-analysis' width='115' height='90'></canvas>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div><small data-tooltip='0%'><b>21</b> events passed</small></div>
+          <div>
+            <small data-tooltip='0%'><b>0</b> events failed, 
+            <b data-tooltip='%'>156</b> others
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row"><div class="col-md-12">
+    <div class="card"><div class="card-header"><p>Timeline</p></div>
+      <div class="card-body pt-0"><div>
+        <canvas id="timeline" height="120"></canvas>
+      </div></div>
+    </div>
+  </div></div>
+  <script>
+	var timeline = { "FailedLogin_AsInvalidUser":447.374,"CompletePurchaseFlow":667.411,"CompletePurchaseFlow":1007.733,"FailedLogin_AsInvalidUser":914.914,"CompletePurchaseFlow":821.788,"FailedLogin_AsInvalidUser":591.108,"FailedLogin_AsLockedOutUser":543.423,"LogoutFlow":1390.091,"LogoutFlow":1663.053,"FailedLogin_AsLockedOutUser":549.154,"FailedLogin_WithEmptyCredentials":403.788,"LogoutFlow":1497.934,"FailedLogin_AsLockedOutUser":514.411,"VerifyInventoryItems":502.781,"FailedLogin_WithEmptyCredentials":661.672,"SuccessfulLogin_AsStandardUser":829.855,"VerifyInventoryItems":390.385,"SuccessfulLogin_AsStandardUser":348.239,"FailedLogin_WithEmptyCredentials":530.636,"VerifyInventoryItems":479.218,"SuccessfulLogin_AsStandardUser":400.666 };
+  </script>
+  <div class="row">
+    <div class="col-md-4 author-container">
+      <div class="card">
+        <div class="card-header"><p>Author</p></div>
+        <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+          <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Vignesh</td>
+              <td>21</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>100%</td>
+            </tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+    <div class="col-md-4 category-container">
+      <div class="card">
+        <div class="card-header"><p>Tags</p></div>
+        <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+          <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+            <tr>
+              <td>E2E</td>
+              <td>9</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td>Login</td>
+              <td>12</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td>LoginTests</td>
+              <td>12</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td>Regression</td>
+              <td>21</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td>E2ETests</td>
+              <td>9</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>100%</td>
+            </tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+    <div class="col-md-4 device-container">
+      <div class="card">
+        <div class="card-header"><p>Device</p></div>
+        <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+          <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>WebKit</td>
+              <td>7</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td>Firefox</td>
+              <td>7</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td>Chromium</td>
+              <td>7</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>100%</td>
+            </tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+      <div class="col-md-4 sysenv-container">
+      <div class="card">
+        <div class="card-header"><p>System/Environment</p></div>
+        <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+          <thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Framework</td>
+              <td>Playwright + C# + NUnit</td>
+            </tr>
+            <tr>
+              <td>Target Application</td>
+              <td>SauceDemo</td>
+            </tr>
+            <tr>
+              <td>Browsers</td>
+              <td>Chromium, Firefox, WebKit</td>
+            </tr>
+            <tr>
+              <td>OS</td>
+              <td>Unix 26.4.1</td>
+            </tr>
+            <tr>
+              <td>Execution Time</td>
+              <td>03/05/2026 8:25:39 PM</td>
+            </tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  var statusGroup = {
+    parentCount: 21,
+    childCount: 0,
+    grandChildCount: 0,
+    eventsCount: 177,
+
+passParent:21,failParent:0,warningParent:0,skipParent:0,    
+passChild:0,failChild:0,warningChild:0,skipChild:0,infoChild:0,    
+passGrandChild:0,failGrandChild:0,warningGrandChild:0,skipGrandChild:0,infoGrandChild:0,    
+passEvents:21,failEvents:0,warningEvents:0,skipEvents:0,infoEvents:156,  };
+</script>
+
+    </div>
+   </div>
+  </div>
+ </div>
+ <script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c439bdbc7bade3d85af3b90e9e69c30ebc87445f/spark/js/spark-script.js"></script>
+<script type='text/javascript'></script>
+</body>
+</html>

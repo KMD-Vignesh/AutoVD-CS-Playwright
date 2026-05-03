@@ -1,0 +1,61 @@
+# Build/
+# Object store
+*.obj
+*.o
+*.a
+*.lib
+*.so
+*.dylib
+
+# Net
+bin/
+obj/
+**/bin/
+**/obj/
+*.nupkg
+*.snupkg
+
+# Test results
+TestResults/
+test-results/
+*.trx
+*.coverage
+*.coveragexml
+
+# IDE
+.vs/
+.vscode/
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.sln.docstates
+*.mono
+*.tmp
+*.log
+*.tmp/
+
+# NuGet
+packages/
+*.nuget.props
+*.nuget.targets
+nuget.config
+
+# Playwright
+.playwright/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Reports (optional - uncomment if you don't want reports in git)
+# Reports/
+
+# Test data (optional - uncomment if sensitive)
+# test-data/

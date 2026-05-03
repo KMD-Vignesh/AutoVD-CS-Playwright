@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AutoVD.Framework/AutoVD.Framework.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AutoVD.Tests/AutoVD.Tests.csproj" />
+  </Folder>
+</Solution>
