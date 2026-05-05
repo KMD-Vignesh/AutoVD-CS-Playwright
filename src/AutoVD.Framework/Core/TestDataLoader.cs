@@ -17,7 +17,7 @@ namespace AutoVD.Framework.Core
             }
 
             var json = File.ReadAllText(dataPath);
-            return JsonConvert.DeserializeObject<TestDataFile>(json);
+            return JsonConvert.DeserializeObject<TestDataFile>(json)!;
         });
 
         public static TestDataFile Load()

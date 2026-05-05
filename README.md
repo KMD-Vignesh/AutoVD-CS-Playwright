@@ -59,16 +59,16 @@ AutoVD-CS-Playwright/
 
 ### `src/AutoVD.Framework/Config/appsettings.json`
 
-| Key | Default | Description |
-|-----|---------|-------------|
-| `BaseUrl` | `https://www.saucedemo.com` | Target application URL |
-| `BrowserOptions` | `[Chromium, Firefox, WebKit]` | Browsers for parallel execution |
-| `DefaultTimeout` | `30000` | Element wait timeout (ms) |
-| `SlowMo` | `0` | Playwright slow motion delay (ms, set >0 for debugging) |
-| `Headless` | `true` | Run browser in headless mode (`false` for headed/visible) |
-| `ScreenshotPath` | `Reports/Screenshots` | Failure screenshot output directory |
-| `ReportPath` | `Reports` | Extent report output directory |
-| `RetryCount` | `1` | Retry count for flaky tests |
+| Key                | Default                         | Description                                                 |
+| ------------------ | ------------------------------- | ----------------------------------------------------------- |
+| `BaseUrl`        | `https://www.saucedemo.com`   | Target application URL                                      |
+| `BrowserOptions` | `[Chromium, Firefox, WebKit]` | Browsers for parallel execution                             |
+| `DefaultTimeout` | `30000`                       | Element wait timeout (ms)                                   |
+| `SlowMo`         | `0`                           | Playwright slow motion delay (ms, set >0 for debugging)     |
+| `Headless`       | `true`                        | Run browser in headless mode (`false` for headed/visible) |
+| `ScreenshotPath` | `Reports/Screenshots`         | Failure screenshot output directory                         |
+| `ReportPath`     | `Reports`                     | Extent report output directory                              |
+| `RetryCount`     | `1`                           | Retry count for flaky tests                                 |
 
 ### `test-data/test-data.json`
 
@@ -110,6 +110,7 @@ dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~
 ```
 
 **Template:**
+
 ```
 --filter "FullyQualifiedName~<partial-test-name>&FullyQualifiedName~<browser-name>"
 ```
@@ -225,7 +226,7 @@ Framework supports **3 ways** to toggle headless/headed mode:
 
 ```bash
 # Headed mode (browser visible)
-HEADED=true dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~SuccessfulLogin_AsStandardUser&FullyQualifiedName~Chromium"
+HEADED=true dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~CompletePurchaseFlow&FullyQualifiedName~Chromium"
 
 # Headed + SlowMo (watch step-by-step)
 HEADED=true SLOWMO=500 dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~SuccessfulLogin_AsStandardUser&FullyQualifiedName~Chromium"
@@ -246,6 +247,7 @@ Edit `src/AutoVD.Framework/Config/appsettings.json`:
 ```
 
 Then run:
+
 ```bash
 dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj
 ```
@@ -260,12 +262,12 @@ dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --environment "HEADED=true" -
 dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --environment "HEADED=true" --environment "SLOWMO=1000" --filter "FullyQualifiedName~Chromium"
 ```
 
-| Flag | Value | Effect |
-|------|-------|--------|
-| `HEADED` | `true` | Browser window visible |
+| Flag       | Value     | Effect                        |
+| ---------- | --------- | ----------------------------- |
+| `HEADED` | `true`  | Browser window visible        |
 | `HEADED` | `false` | Browser runs hidden (default) |
-| `SLOWMO` | `0` | No delay (default) |
-| `SLOWMO` | `500` | 500ms delay between actions |
+| `SLOWMO` | `0`     | No delay (default)            |
+| `SLOWMO` | `500`   | 500ms delay between actions   |
 
 ---
 
@@ -314,33 +316,35 @@ Reports/
 
 ### Report Features
 
-| Feature | Value |
-|---------|-------|
-| **Browser Tags** | Chromium, Firefox, WebKit |
-| **Categories** | Login, E2E, Regression |
-| **Author** | Vignesh (customizable per TestFixture) |
-| **Failure Screenshots** | Auto-attached on test failure |
-| **Timeline** | Test execution timestamps |
+| Feature                       | Value                                  |
+| ----------------------------- | -------------------------------------- |
+| **Browser Tags**        | Chromium, Firefox, WebKit              |
+| **Categories**          | Login, E2E, Regression                 |
+| **Author**              | Vignesh (customizable per TestFixture) |
+| **Failure Screenshots** | Auto-attached on test failure          |
+| **Timeline**            | Test execution timestamps              |
 
 ---
 
 ## 🧪 Test Summary
 
-| Test Class | Tests | Browsers | Total Runs |
-|------------|-------|----------|------------|
-| `LoginTests` | 4 | Chromium, Firefox, WebKit | 12 |
-| `E2ETests` | 3 | Chromium, Firefox, WebKit | 9 |
-| **Total** | **7** | **3** | **21** |
+| Test Class      | Tests       | Browsers                  | Total Runs   |
+| --------------- | ----------- | ------------------------- | ------------ |
+| `LoginTests`  | 4           | Chromium, Firefox, WebKit | 12           |
+| `E2ETests`    | 3           | Chromium, Firefox, WebKit | 9            |
+| **Total** | **7** | **3**               | **21** |
 
 ### Test Scenarios
 
 **LoginTests**
+
 - `SuccessfulLogin_AsStandardUser` - Valid login, verify inventory loads
 - `FailedLogin_AsLockedOutUser` - Locked user, verify error message
 - `FailedLogin_AsInvalidUser` - Wrong credentials, verify error
 - `FailedLogin_WithEmptyCredentials` - No input, verify validation
 
 **E2ETests**
+
 - `CompletePurchaseFlow` - Login → Add 2 items → Cart → Checkout → Complete → Back Home
 - `LogoutFlow` - Login → Open Menu → Logout → Verify redirect
 - `VerifyInventoryItems` - Login → Verify 6 items → Check name & price
@@ -429,31 +433,31 @@ dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~
 
 ## 📦 Dependencies
 
-| Package | Version | Purpose |
-|---------|---------|---------|
-| `Microsoft.Playwright` | 1.59.0 | Browser automation |
-| `Microsoft.Playwright.NUnit` | 1.59.0 | Playwright + NUnit integration |
-| `NUnit` | 4.3.2 | Test framework |
-| `NUnit3TestAdapter` | 5.0.0 | Visual Studio / CLI test runner |
-| `ExtentReports` | 5.0.4 | HTML reporting with tags/authors |
-| `Newtonsoft.Json` | 13.0.4 | JSON serialization |
-| `Microsoft.Extensions.Configuration` | 10.0.7 | Configuration management |
-| `Microsoft.Extensions.Configuration.Binder` | 10.0.7 | Config to POCO binding |
-| `Microsoft.Extensions.Configuration.Json` | 10.0.7 | JSON config file support |
+| Package                                       | Version | Purpose                          |
+| --------------------------------------------- | ------- | -------------------------------- |
+| `Microsoft.Playwright`                      | 1.59.0  | Browser automation               |
+| `Microsoft.Playwright.NUnit`                | 1.59.0  | Playwright + NUnit integration   |
+| `NUnit`                                     | 4.3.2   | Test framework                   |
+| `NUnit3TestAdapter`                         | 5.0.0   | Visual Studio / CLI test runner  |
+| `ExtentReports`                             | 5.0.4   | HTML reporting with tags/authors |
+| `Newtonsoft.Json`                           | 13.0.4  | JSON serialization               |
+| `Microsoft.Extensions.Configuration`        | 10.0.7  | Configuration management         |
+| `Microsoft.Extensions.Configuration.Binder` | 10.0.7  | Config to POCO binding           |
+| `Microsoft.Extensions.Configuration.Json`   | 10.0.7  | JSON config file support         |
 
 ---
 
 ## 💡 Quick Reference
 
-| Task | Command |
-|------|---------|
-| Build | `dotnet build AutoVD.Framework.slnx` |
-| All tests | `dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj` |
-| One test, one browser | `dotnet test ... --filter "FullyQualifiedName~TestName&FullyQualifiedName~Chromium"` |
-| One test, all browsers | `dotnet test ... --filter "FullyQualifiedName~TestName"` |
-| All tests, one browser | `dotnet test ... --filter "FullyQualifiedName~Chromium"` |
-| Test name contains | `dotnet test ... --filter "FullyQualifiedName~Login"` (runs all with "Login" in name) |
-| Multiple tests (OR) | `dotnet test ... --filter "FullyQualifiedName~Login\|FullyQualifiedName~Logout"` |
-| Headed mode | `HEADED=true dotnet test ...` |
-| Headed + slow motion | `HEADED=true SLOWMO=500 dotnet test ...` |
-| View report | Open `Reports/ExtentReport_*.html` in browser |
+| Task                   | Command                                                                                 |
+| ---------------------- | --------------------------------------------------------------------------------------- |
+| Build                  | `dotnet build AutoVD.Framework.slnx`                                                  |
+| All tests              | `dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj`                                  |
+| One test, one browser  | `dotnet test ... --filter "FullyQualifiedName~TestName&FullyQualifiedName~Chromium"`  |
+| One test, all browsers | `dotnet test ... --filter "FullyQualifiedName~TestName"`                              |
+| All tests, one browser | `dotnet test ... --filter "FullyQualifiedName~Chromium"`                              |
+| Test name contains     | `dotnet test ... --filter "FullyQualifiedName~Login"` (runs all with "Login" in name) |
+| Multiple tests (OR)    | `dotnet test ... --filter "FullyQualifiedName~Login\|FullyQualifiedName~Logout"`       |
+| Headed mode            | `HEADED=true dotnet test ...`                                                         |
+| Headed + slow motion   | `HEADED=true SLOWMO=500 dotnet test ...`                                              |
+| View report            | Open `Reports/ExtentReport_*.html` in browser                                         |

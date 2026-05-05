@@ -7,13 +7,13 @@ namespace AutoVD.Framework.Core
 {
     public class PlaywrightDriver : IAsyncDisposable
     {
-        private IPlaywright _playwright;
-        private IBrowser _browser;
+        private IPlaywright _playwright = null!;
+        private IBrowser _browser = null!;
         private readonly AppSettings _settings;
         private readonly string _browserName;
 
-        public IBrowserContext Context { get; private set; }
-        public IPage Page { get; private set; }
+        public IBrowserContext Context { get; private set; } = null!;
+        public IPage Page { get; private set; } = null!;
 
         public PlaywrightDriver(string browserName)
         {
@@ -91,6 +91,14 @@ namespace AutoVD.Framework.Core
             await Page.ScreenshotAsync(new PageScreenshotOptions
             {
                 Path = fullPath,
+                FullPage = true
+            });
+        }
+
+        public async Task<byte[]> CaptureScreenshotAsync()
+        {
+            return await Page.ScreenshotAsync(new PageScreenshotOptions
+            {
                 FullPage = true
             });
         }

@@ -7,15 +7,15 @@ using AutoVD.Framework.Pages;
 namespace AutoVD.Tests.Tests
 {
     [Parallelizable(ParallelScope.Self)]
-    [TestFixture("Chromium", "E2E", "Vignesh")]
-    [TestFixture("Firefox", "E2E", "Vignesh")]
-    [TestFixture("WebKit", "E2E", "Vignesh")]
+    [TestFixture("Chromium", "E2E")]
+    [TestFixture("Firefox", "E2E")]
+    [TestFixture("WebKit", "E2E")]
     public class E2ETests : BaseTest
     {
         private LoginPage _loginPage;
         private TestDataFile _testData;
 
-        public E2ETests(string browserName, string category, string author) : base(browserName, category, author)
+        public E2ETests(string browserName, string category) : base(browserName, category)
         {
         }
 
@@ -26,7 +26,7 @@ namespace AutoVD.Tests.Tests
             _testData = TestDataLoader.Load();
         }
 
-        [Test, Description("Complete purchase flow: login, add items, checkout, complete order")]
+        [Test, Description("Complete purchase flow: login, add items, checkout, complete order"), Author("Vignesh")]
         public async Task CompletePurchaseFlow()
         {
             var user = _testData.Users[0];
@@ -89,7 +89,7 @@ namespace AutoVD.Tests.Tests
             Assert.That(await inventoryPage.IsLoadedAsync(), Is.True, "Should return to inventory page");
         }
 
-        [Test, Description("Verify user can logout successfully")]
+        [Test, Description("Verify user can logout successfully"), Author("Vicky")]
         public async Task LogoutFlow()
         {
             var user = _testData.Users[0];
@@ -112,7 +112,7 @@ namespace AutoVD.Tests.Tests
             Assert.That(isLoginPage, Is.True, "Should redirect to login page after logout");
         }
 
-        [Test, Description("Verify all inventory items are displayed")]
+        [Test, Description("Verify all inventory items are displayed"), Author("KMDV")]
         public async Task VerifyInventoryItems()
         {
             var user = _testData.Users[0];

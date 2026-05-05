@@ -14,7 +14,7 @@ namespace AutoVD.Framework.Core
 
             if (!string.IsNullOrEmpty(configPath))
             {
-                builder.SetBasePath(Path.GetDirectoryName(configPath));
+                builder.SetBasePath(Path.GetDirectoryName(configPath)!);
                 builder.AddJsonFile(configPath, optional: false, reloadOnChange: true);
             }
             else
@@ -43,7 +43,7 @@ namespace AutoVD.Framework.Core
                 }
             }
 
-            return null;
+            return null!;
         }
 
         private static string FindProjectRoot()
@@ -87,7 +87,7 @@ namespace AutoVD.Framework.Core
 
         public static T GetSetting<T>(string key)
         {
-            return _configuration.Value.GetValue<T>(key);
+            return _configuration.Value.GetValue<T>(key)!;
         }
     }
 }

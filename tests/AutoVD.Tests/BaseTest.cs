@@ -15,13 +15,26 @@ namespace AutoVD.Tests
         protected ExtentTest _test;
         private readonly string _browserName;
         private readonly string _category;
-        private readonly string _author;
 
-        protected BaseTest(string browserName, string category = "", string author = "")
+        protected BaseTest(string browserName, string category = "")
         {
             _browserName = browserName;
             _category = category;
-            _author = author;
+        }
+
+        private static string ResolveAuthor()
+        {
+            var testName = TestContext.CurrentContext.Test.Name;
+            var testClass = TestContext.CurrentContext.Test.ClassName;
+            var type = Type.GetType(testClass!);
+            var method = type?.GetMethod(testName!);
+            var authorAttrs = method?.GetCustomAttributes(typeof(NUnit.Framework.AuthorAttribute), inherit: false) as NUnit.Framework.AuthorAttribute[];
+            if (authorAttrs?.Length > 0)
+            {
+                var values = authorAttrs[0].Properties["Author"];
+                return (values as System.Collections.IList)?[0]?.ToString() ?? "Unknown";
+            }
+            return "Unknown";
         }
 
         [SetUp]
@@ -39,7 +52,7 @@ namespace AutoVD.Tests
                 testName,
                 _browserName,
                 category,
-                _author
+                ResolveAuthor()
             );
             _test.Info($"Browser: {_browserName}");
             _test.Info($"Test Class: {testClass}");
@@ -52,19 +65,12 @@ namespace AutoVD.Tests
 
             if (status == NUnit.Framework.Interfaces.TestStatus.Failed)
             {
-                var screenshotName = $"{TestContext.CurrentContext.Test.Name}_{_browserName}_{DateTime.Now:yyyyMMdd_HHmmss}.png";
-                await Driver.ScreenshotAsync(screenshotName);
-
-                var fullPath = Path.Combine(ConfigReader.LoadSettings().ScreenshotPath, screenshotName);
-
-                if (File.Exists(fullPath))
-                {
-                    ExtentReportManager.AttachScreenshot(
-                        _test,
-                        fullPath,
-                        $"Failure Screenshot ({_browserName})"
-                    );
-                }
+                var screenshotBytes = await Driver.CaptureScreenshotAsync();
+                ExtentReportManager.AttachScreenshotInline(
+                    _test,
+                    screenshotBytes,
+                    $"Failure Screenshot ({_browserName})"
+                );
 
                 var stackTrace = TestContext.CurrentContext.Result.StackTrace;
                 var exception = new Exception(TestContext.CurrentContext.Result.Message)

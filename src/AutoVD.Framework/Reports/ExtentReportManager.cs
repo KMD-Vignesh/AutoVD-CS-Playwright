@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
@@ -7,9 +8,9 @@ namespace AutoVD.Framework.Reports
 {
     public static class ExtentReportManager
     {
-        private static ExtentReports _extentReports;
-        private static ExtentSparkReporter _sparkReporter;
         private static readonly object _lock = new();
+        private static ExtentReports? _extentReports;
+        private static ExtentSparkReporter? _sparkReporter;
 
         public static ExtentReports Instance
         {
@@ -25,7 +26,7 @@ namespace AutoVD.Framework.Reports
                         }
                     }
                 }
-                return _extentReports;
+                return _extentReports!;
             }
         }
 
@@ -56,23 +57,26 @@ namespace AutoVD.Framework.Reports
 
         public static ExtentTest CreateTest(string testName, string browserName, string category = "", string author = "")
         {
-            var test = Instance.CreateTest(testName);
-
-            test.AssignAuthor(string.IsNullOrEmpty(author) ? "AutoVD Framework" : author);
-
-            test.AssignDevice(browserName);
-
-            if (!string.IsNullOrEmpty(category))
+            lock (_lock)
             {
-                foreach (var cat in category.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                var test = Instance.CreateTest(testName);
+
+                test.AssignAuthor(string.IsNullOrEmpty(author) ? "AutoVD Framework" : author);
+
+                test.AssignDevice(browserName);
+
+                if (!string.IsNullOrEmpty(category))
                 {
-                    test.AssignCategory(cat.Trim());
+                    foreach (var cat in category.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                    {
+                        test.AssignCategory(cat.Trim());
+                    }
                 }
+
+                test.AssignCategory("Regression");
+
+                return test;
             }
-
-            test.AssignCategory("Regression");
-
-            return test;
         }
 
         public static void Flush()
@@ -87,12 +91,7 @@ namespace AutoVD.Framework.Reports
         {
             lock (_lock)
             {
-                if (_extentReports != null)
-                {
-                    _extentReports.Flush();
-                    _extentReports = null;
-                    _sparkReporter = null;
-                }
+                _extentReports?.Flush();
             }
         }
 
@@ -102,6 +101,12 @@ namespace AutoVD.Framework.Reports
             {
                 test.AddScreenCaptureFromPath(screenshotPath, stepName);
             }
+        }
+
+        public static void AttachScreenshotInline(ExtentTest test, byte[] screenshotBytes, string stepName)
+        {
+            var base64 = Convert.ToBase64String(screenshotBytes);
+            test.AddScreenCaptureFromBase64String(base64, stepName);
         }
     }
 }
