@@ -54,8 +54,8 @@ nuget.config
 ehthumbs.db
 Thumbs.db
 
-# Reports (optional - uncomment if you don't want reports in git)
-# Reports/
+# Reports
+Reports/
 
 # Test data (optional - uncomment if sensitive)
 # test-data/
