@@ -65,12 +65,19 @@ namespace AutoVD.Tests
 
             if (status == NUnit.Framework.Interfaces.TestStatus.Failed)
             {
-                var screenshotBytes = await Driver.CaptureScreenshotAsync();
-                ExtentReportManager.AttachScreenshotInline(
-                    _test,
-                    screenshotBytes,
-                    $"Failure Screenshot ({_browserName})"
-                );
+                if (Driver != null)
+                {
+                    try
+                    {
+                        var screenshotBytes = await Driver.CaptureScreenshotAsync();
+                        ExtentReportManager.AttachScreenshotInline(
+                            _test,
+                            screenshotBytes,
+                            $"Failure Screenshot ({_browserName})"
+                        );
+                    }
+                    catch { /* Ignore screenshot errors on failure */ }
+                }
 
                 var stackTrace = TestContext.CurrentContext.Result.StackTrace;
                 var exception = new Exception(TestContext.CurrentContext.Result.Message)
