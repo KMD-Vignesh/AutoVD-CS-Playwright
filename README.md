@@ -1,463 +1,250 @@
-# AutoVD Framework - SauceDemo Playwright Automation
+<div align="center">
 
-Production-grade C# test automation framework using **Playwright**, **NUnit**, and **Extent Reports** for [SauceDemo](https://www.saucedemo.com).
+<h1>AutoVD-CS-Playwright</h1>
 
----
+<p><strong>Playwright UI test automation framework for .NET</strong><br>
+C# · Playwright · NUnit · Page Objects · ExtentReports</p>
 
-## 📁 Project Structure
+<p>
+  <a href="https://github.com/KMD-Vignesh/AutoVD-CS-Playwright"><img src="https://img.shields.io/badge/.NET-10-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt=".NET 10"></a>
+  <a href="https://github.com/KMD-Vignesh/AutoVD-CS-Playwright"><img src="https://img.shields.io/badge/Playwright-1.61.0-2EAD33?style=for-the-badge&logo=playwright&logoColor=white" alt="Playwright 1.61.0"></a>
+  <a href="https://github.com/KMD-Vignesh/AutoVD-CS-Playwright"><img src="https://img.shields.io/badge/NUnit-4.3.2-1B6EC2?style=for-the-badge" alt="NUnit 4.3.2"></a>
+  <a href="https://github.com/KMD-Vignesh/AutoVD-CS-Playwright/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-2EA44F?style=for-the-badge" alt="MIT License"></a>
+</p>
 
-```
-AutoVD-CS-Playwright/
-├── .gitignore                          # Git ignore rules
-├── AutoVD.Framework.slnx               # Solution file
-├── README.md                           # This file
-│
-├── src/
-│   └── AutoVD.Framework/               # Shared framework library
-│       ├── Config/
-│       │   └── appsettings.json        # App config (URL, browsers, timeouts, paths)
-│       ├── Core/
-│       │   ├── ConfigReader.cs         # Loads JSON config into AppSettings
-│       │   ├── PlaywrightDriver.cs     # Browser lifecycle (init, screenshot, dispose)
-│       │   └── TestDataLoader.cs       # Loads JSON test data (users, products)
-│       ├── Models/
-│       │   ├── AppSettings.cs          # Config POCO model
-│       │   └── TestData.cs             # Test data POCO models (User, Product)
-│       ├── Pages/                      # Page Object Model (POM)
-│       │   ├── BasePage.cs             # Base class: Click, Fill, WaitFor, TextContent
-│       │   ├── LoginPage.cs            # Login page: username, password, login, error
-│       │   ├── InventoryPage.cs        # Product listing: items, cart, sort, menu, logout
-│       │   ├── CartPage.cs             # Shopping cart: items, checkout, continue shopping
-│       │   ├── CheckoutInfoPage.cs     # Checkout form: name, postal code
-│       │   ├── CheckoutOverviewPage.cs # Order summary: subtotal, total, finish
-│       │   └── CheckoutCompletePage.cs # Order confirmation: message, back home
-│       ├── Reports/
-│       │   └── ExtentReportManager.cs  # Extent HTML reports with tags, author, screenshots
-│       └── AutoVD.Framework.csproj     # Framework project (class library)
-│
-├── test-data/
-│   └── test-data.json                  # Test data: users (valid/invalid), products
-│
-├── tests/
-│   └── AutoVD.Tests/                   # Test project (NUnit)
-│       ├── BaseTest.cs                 # Parallel fixture setup/teardown, report attach
-│       ├── GlobalSetup.cs              # One-time report initialization
-│       ├── nunit.runsettings           # NUnit parallel runner settings
-│       ├── Tests/
-│       │   ├── LoginTests.cs           # Login scenarios (success, locked, invalid, empty)
-│       │   └── E2ETests.cs             # End-to-end flows (purchase, logout, inventory)
-│       └── AutoVD.Tests.csproj         # Test project file
-│
-└── Reports/                            # Generated after test run (created automatically)
-    ├── ExtentReport_*.html             # Single HTML report with all test results
-    └── Screenshots/                    # Failure screenshots (created on test failure)
-```
+</div>
 
----
+<div align="center">
 
-## ⚙️ Configuration
+<h3>Vignesh D</h3>
 
-### `src/AutoVD.Framework/Config/appsettings.json`
+<p><strong>Senior Software Quality Analyst</strong><br>Chennai, India</p>
 
-| Key                | Default                         | Description                                                 |
-| ------------------ | ------------------------------- | ----------------------------------------------------------- |
-| `BaseUrl`        | `https://www.saucedemo.com`   | Target application URL                                      |
-| `BrowserOptions` | `[Chromium, Firefox, WebKit]` | Browsers for parallel execution                             |
-| `DefaultTimeout` | `30000`                       | Element wait timeout (ms)                                   |
-| `SlowMo`         | `0`                           | Playwright slow motion delay (ms, set >0 for debugging)     |
-| `Headless`       | `true`                        | Run browser in headless mode (`false` for headed/visible) |
-| `ScreenshotPath` | `Reports/Screenshots`         | Failure screenshot output directory                         |
-| `ReportPath`     | `Reports`                     | Extent report output directory                              |
-| `RetryCount`     | `1`                           | Retry count for flaky tests                                 |
+<p>
+  <a href="https://www.linkedin.com/in/kmd-vignesh/"><img src="https://img.shields.io/badge/LinkedIn-Vignesh%20D-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="https://github.com/KMD-Vignesh"><img src="https://img.shields.io/badge/GitHub-KMD--Vignesh-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+</p>
 
-### `test-data/test-data.json`
+<p>
+  <a href="mailto:KMD.Vignesh@outlook.com">KMD.Vignesh@outlook.com</a>
+  &nbsp;·&nbsp;
+  <a href="mailto:VigneshDhakshnamoorthy@gmail.com">VigneshDhakshnamoorthy@gmail.com</a>
+</p>
 
-Contains test data for users and products:
+</div>
 
-- **Users**: StandardUser, LockedOutUser, ProblemUser, InvalidUser
-- **Products**: Sauce Labs Backpack, Bike Light, Bolt T-Shirt
+## What It Is
 
-To add more test data, edit this file and access via `TestDataLoader.GetUser("Name")`.
+A Playwright + NUnit framework for browser tests on .NET. A test class passes the browser and category to `BaseTest` through `[TestFixture]`, and each test gets its own Playwright page, Extent entry, and failure screenshot.
 
----
+- **One fixture, three browsers** — `[TestFixture("Chromium", "Login")]`, Firefox, and WebKit run the same test class.
+- **Page objects with a typed driver** — `BasePage` wraps `IPage` and keeps selectors out of the tests.
+- **Test data outside the code** — users and products load from `test-data/test-data.json`.
+- **Named reports** — every run writes `Reports/ExtentReport_<timestamp>.html` with browser, category, and author.
 
-## 🚀 Execution Commands
+## Framework Family
 
-### Prerequisites
+Seven implementations of the same layered idea. Pick the stack your team already uses; the concepts and reports stay familiar.
+
+| Framework                       | Stack                         | Covers    | Repository                                                                                  |
+| :------------------------------ | :---------------------------- | :-------- | :------------------------------------------------------------------------------------------ |
+| **Java + Selenium**             | Java 17 · Selenium 4 · TestNG | UI + REST | [AutoVD-Java-Selenium](https://github.com/KMD-Vignesh/AutoVD-Java-Selenium)                 |
+| **Java + Playwright**           | Java 17 · Playwright · TestNG | UI + REST | [AutoVD-Java-Playwright](https://github.com/KMD-Vignesh/AutoVD-Java-Playwright)             |
+| **C# + Playwright** — this repo | C# · Playwright · NUnit       | UI + REST | [AutoVD-CS-Playwright](https://github.com/KMD-Vignesh/AutoVD-CS-Playwright)                 |
+| **Python + Selenium**           | Python · Selenium · pytest    | UI + REST | [AutoVD-Python-Selenium](https://github.com/KMD-Vignesh/AutoVD-Python-Selenium)             |
+| **Python + Playwright**         | Python · Playwright · pytest  | UI + REST | [AutoVD-Python-Playwright](https://github.com/KMD-Vignesh/AutoVD-Python-Playwright)         |
+| **TypeScript + Playwright**     | TypeScript · Playwright       | UI + REST | [AutoVD-Typescript-Playwright](https://github.com/KMD-Vignesh/AutoVD-Typescript-Playwright) |
+| **TypeScript + Cypress**        | TypeScript · Cypress          | UI (E2E)  | [AutoVD-Typescript-Cypress](https://github.com/KMD-Vignesh/AutoVD-Typescript-Cypress)       |
+
+## Quick Start
+
+**Prerequisites:** .NET SDK 10, PowerShell 7 (`pwsh`), and the Playwright browser binaries.
 
 ```bash
-# Install Playwright browsers (run once)
-cd tests/AutoVD.Tests/bin/Debug/net10.0
-pwsh playwright.ps1 install chromium
-pwsh playwright.ps1 install firefox
-pwsh playwright.ps1 install webkit
-```
-
-### Build
-
-```bash
+git clone https://github.com/KMD-Vignesh/AutoVD-CS-Playwright.git
+cd AutoVD-CS-Playwright
 dotnet build AutoVD.Framework.slnx
-```
-
----
-
-### One Test Case - One Browser (Contains Match)
-
-The `~` operator means **"contains"** — it matches any test whose fully qualified name contains the given text.
-
-```bash
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~TestName&FullyQualifiedName~Browser"
-```
-
-**Template:**
-
-```
---filter "FullyQualifiedName~<partial-test-name>&FullyQualifiedName~<browser-name>"
-```
-
-**Examples:**
-
-```bash
-# Run "SuccessfulLogin_AsStandardUser" on Chromium only
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~SuccessfulLogin_AsStandardUser&FullyQualifiedName~Chromium"
-
-# Run "CompletePurchaseFlow" on Firefox only
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~CompletePurchaseFlow&FullyQualifiedName~Firefox"
-
-# Run "LogoutFlow" on WebKit only
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~LogoutFlow&FullyQualifiedName~WebKit"
-
-# Partial match - runs ANY test containing "Login" on Chromium
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~Login&FullyQualifiedName~Chromium"
-
-# Partial match - runs ANY test containing "Flow" on Firefox
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~Flow&FullyQualifiedName~Firefox"
-```
-
-> `~` = Contains (partial match), `&` = AND, `|` = OR
-
----
-
-### All Tests - All Browsers (Default: Headless, Parallel)
-
-```bash
+pwsh tests/AutoVD.Tests/bin/Debug/net10.0/playwright.ps1 install
 dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj
 ```
 
-Runs 21 tests across 3 browsers (Chromium, Firefox, WebKit) in parallel.
+The suite runs 8 test methods across 3 browsers: 24 runs in total (5 login and 3 end-to-end scenarios per browser). Headless is the default.
 
----
-
-### All Tests - Single Browser
+Open the report:
 
 ```bash
-# Chromium only
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~Chromium"
-
-# Firefox only
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~Firefox"
-
-# WebKit only
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~WebKit"
+open Reports/ExtentReport_*.html
 ```
 
----
+On Linux use `xdg-open`; on Windows open the newest file in Explorer.
 
-### By Test File / Class
+## Configuration
 
-```bash
-# All login tests (all browsers)
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~LoginTests"
-
-# All E2E tests (all browsers)
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~E2ETests"
-```
-
----
-
-### By Test Name
-
-```bash
-# Specific test (all browsers)
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~SuccessfulLogin_AsStandardUser"
-
-# Specific test, single browser
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~CompletePurchaseFlow&FullyQualifiedName~Chromium"
-
-# Multiple tests
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~LogoutFlow|FullyQualifiedName~VerifyInventoryItems"
-```
-
----
-
-### By Category (Login / E2E)
-
-```bash
-# Note: Category is set via TestFixture attribute, filter by class name
-# Login category
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~LoginTests"
-
-# E2E category
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~E2ETests"
-```
-
----
-
-### By Browser (All Tests)
-
-```bash
-# All tests on Chromium
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~Chromium"
-
-# All tests on Firefox
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~Firefox"
-
-# All tests on WebKit
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~WebKit"
-```
-
----
-
-### Headless vs Headed Mode
-
-Framework supports **3 ways** to toggle headless/headed mode:
-
-#### Method 1: Environment Variable (Recommended - No File Edit)
-
-```bash
-# Headed mode (browser visible)
-HEADED=true dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~CompletePurchaseFlow&FullyQualifiedName~Chromium"
-
-# Headed + SlowMo (watch step-by-step)
-HEADED=true SLOWMO=500 dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~SuccessfulLogin_AsStandardUser&FullyQualifiedName~Chromium"
-
-# Headless mode (explicit)
-HEADED=false dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj
-```
-
-#### Method 2: Config File (Permanent)
-
-Edit `src/AutoVD.Framework/Config/appsettings.json`:
+Settings live in `src/AutoVD.Framework/Config/appsettings.json`.
 
 ```json
 {
-  "Headless": false,
-  "SlowMo": 500
+  "BaseUrl": "https://www.saucedemo.com",
+  "BrowserOptions": ["Chromium", "Firefox", "WebKit"],
+  "DefaultTimeout": 30000,
+  "Headless": true
 }
 ```
 
-Then run:
+| Key | Default | What it does |
+| :--- | :--- | :--- |
+| `BaseUrl` | SauceDemo URL | Starting page for every test |
+| `BrowserOptions` | Chromium, Firefox, WebKit | Browsers available to the fixtures |
+| `DefaultTimeout` | `30000` | Playwright timeout in milliseconds |
+| `SlowMo` | `0` | Delay between actions, in milliseconds |
+| `Headless` | `true` | Set `false` to watch the run |
+| `ScreenshotPath` | `Reports/Screenshots` | Failure screenshot folder |
+| `ReportPath` | `Reports` | Extent report folder |
+| `RetryCount` | `1` | Retries for flaky actions |
 
-```bash
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj
+Test data lives in `test-data/test-data.json` and is loaded by `TestDataLoader` into typed models.
+
+## Writing Tests
+
+A fixture supplies the browser and category; the test gets its page object in `[SetUp]`:
+
+```csharp
+[TestFixture("Chromium", "Login")]
+[TestFixture("Firefox", "Login")]
+[TestFixture("WebKit", "Login")]
+public class LoginTests : BaseTest
+{
+    private LoginPage _loginPage;
+    private TestDataFile _testData;
+
+    public LoginTests(string browserName, string category) : base(browserName, category) { }
+
+    [SetUp]
+    public void InitPages()
+    {
+        _loginPage = new LoginPage(Driver.Page);
+        _testData = TestDataLoader.Load();
+    }
+
+    [Test, Author("Vignesh")]
+    public async Task SuccessfulLogin_AsStandardUser()
+    {
+        await _loginPage.NavigateAsync();
+        var user = _testData.Users[0];
+        var inventoryPage = await _loginPage.LoginAsAsync(user.Username, user.Password);
+        Assert.That(await inventoryPage.IsLoadedAsync(), Is.True);
+    }
+}
 ```
 
-#### Method 3: .NET Test Environment Variables
+A page object extends `BasePage` and keeps selectors private:
 
-```bash
-# Headed mode via DOTNET environment variable
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --environment "HEADED=true" --filter "FullyQualifiedName~Chromium"
+```csharp
+public class LoginPage : BasePage
+{
+    private readonly string _username = "#user-name";
+    private readonly string _password = "#password";
+    private readonly string _login = "#login-button";
 
-# Headed + SlowMo
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --environment "HEADED=true" --environment "SLOWMO=1000" --filter "FullyQualifiedName~Chromium"
+    public LoginPage(IPage page) : base(page) { }
+
+    public Task NavigateAsync() =>
+        Page.GotoAsync(Core.ConfigReader.LoadSettings().BaseUrl);
+
+    public async Task<InventoryPage> LoginAsAsync(string user, string pass)
+    {
+        await Page.FillAsync(_username, user);
+        await Page.FillAsync(_password, pass);
+        await Page.ClickAsync(_login);
+        return new InventoryPage(Page);
+    }
+}
 ```
 
-| Flag       | Value     | Effect                        |
-| ---------- | --------- | ----------------------------- |
-| `HEADED` | `true`  | Browser window visible        |
-| `HEADED` | `false` | Browser runs hidden (default) |
-| `SLOWMO` | `0`     | No delay (default)            |
-| `SLOWMO` | `500`   | 500ms delay between actions   |
+## Framework Map
 
----
+Read these in order. Everything else supports them.
 
-### With Detailed Output
+| Project / folder | Key classes | What it does |
+| :--- | :--- | :--- |
+| `tests/AutoVD.Tests` | `BaseTest`, `GlobalSetup` | NUnit lifecycle, Extent entry, screenshot on failure. **Start here.** |
+| `tests/AutoVD.Tests/Tests` | `LoginTests`, `E2ETests` | The test fixtures |
+| `src/AutoVD.Framework/Core` | `PlaywrightDriver`, `ConfigReader`, `TestDataLoader` | Browser, config, and JSON data loading |
+| `src/AutoVD.Framework/Pages` | `BasePage`, `LoginPage`, `InventoryPage`, cart/checkout pages | Page objects |
+| `src/AutoVD.Framework/Reports` | `ExtentReportManager` | Report creation and flush |
+| `src/AutoVD.Framework/Models` | `AppSettings`, `TestData` | Typed config and data |
+| `src/AutoVD.Framework/Config` | `appsettings.json` | Runtime settings |
 
-```bash
-# Verbose console output
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --logger "console;verbosity=detailed"
+A few things carry most of the work:
 
-# Normal output
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --logger "console;verbosity=normal"
+| Item | Use |
+| :--- | :--- |
+| `Driver.Page` | Playwright `IPage` for the current test |
+| `BasePage.Page` | The same page, available inside page objects |
+| `_test.Info(...)` | Write a step to the Extent report |
+| `TestDataLoader.Load()` | Typed test data from JSON |
+| `[Author("...")]` | Author shown in the report |
+| `Assert.That(...)` | NUnit assertions |
 
-# Minimal output (pass/fail count only)
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --logger "console;verbosity=minimal"
+## How a Run Works
+
+1. NUnit expands each `[TestFixture(browser, category)]` into its own fixture instance.
+2. `[SetUp]` in `BaseTest` starts Playwright, navigates to `BaseUrl`, and creates the Extent test.
+3. Fixture `[SetUp]` builds the page objects and loads test data.
+4. `[TearDown]` records the result and attaches a failure screenshot.
+5. `GlobalSetup` flushes the Extent report once at the end of the assembly.
+
+## Project Layout
+
+```text
+AutoVD-CS-Playwright/
+├── AutoVD.Framework.slnx            # solution
+├── src/AutoVD.Framework/            # framework: Core, Pages, Reports, Models, Config
+├── tests/AutoVD.Tests/              # BaseTest, GlobalSetup, Tests
+├── test-data/test-data.json         # users and products
+├── Reports/                         # generated: Extent HTML + screenshots
+└── dotnet-tools.json                # local tool manifest
 ```
 
----
+`Reports/` and the `bin/`/`obj/` folders are build output.
 
-### Single Test, Single Browser, No Build
+## Reports
+
+| Output | Location |
+| :--- | :--- |
+| ExtentReports HTML | `Reports/ExtentReport_<yyyyMMdd_HHmmss>.html` |
+| Failure screenshots | `Reports/Screenshots/` |
+| NUnit console output | terminal, or `dotnet test --logger trx` |
+
+Each run creates a new timestamped report instead of overwriting the previous one.
+
+## Running a Subset
+
+Use NUnit's `--filter` with `FullyQualifiedName~` for contains matching:
 
 ```bash
+# One class on one browser
 dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj \
-  --filter "FullyQualifiedName~SuccessfulLogin_AsStandardUser&FullyQualifiedName~Chromium" \
-  --no-build
+  --filter "FullyQualifiedName~LoginTests&FullyQualifiedName~Chromium"
+
+# One test on Firefox
+dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj \
+  --filter "FullyQualifiedName~CompletePurchaseFlow&FullyQualifiedName~Firefox"
 ```
 
----
+`~` means contains, `&` means AND, and `|` means OR.
 
-### With Custom RunSettings
+## Troubleshooting
 
-```bash
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --settings tests/AutoVD.Tests/nunit.runsettings
-```
+| Symptom | Fix |
+| :--- | :--- |
+| `NETSDK1045` or SDK not found | Install the .NET 10 SDK and check `dotnet --version`. |
+| `Executable doesn't exist` when a browser starts | Run the `playwright.ps1 install` step after building. |
+| `pwsh` not recognised | Install PowerShell 7, or run the script with `powershell` on Windows. |
+| Filter matches nothing | `--filter` is name-based; check the fully qualified test and browser names. |
+| Report is missing | Look for the newest `Reports/ExtentReport_*.html`; the filename is timestamped. |
+| Tests interfere under parallel runs | Fixtures run in parallel; keep test data per test and avoid shared state. |
 
----
+## License
 
-## 📊 Reports
-
-Reports are generated in the **project root `Reports/`** directory after every run.
-
-```
-Reports/
-├── ExtentReport_20260503_191028.html   ← Open in browser
-└── Screenshots/                        ← Failure screenshots
-```
-
-### Report Features
-
-| Feature                       | Value                                  |
-| ----------------------------- | -------------------------------------- |
-| **Browser Tags**        | Chromium, Firefox, WebKit              |
-| **Categories**          | Login, E2E, Regression                 |
-| **Author**              | Vignesh (customizable per TestFixture) |
-| **Failure Screenshots** | Auto-attached on test failure          |
-| **Timeline**            | Test execution timestamps              |
-
----
-
-## 🧪 Test Summary
-
-| Test Class      | Tests       | Browsers                  | Total Runs   |
-| --------------- | ----------- | ------------------------- | ------------ |
-| `LoginTests`  | 4           | Chromium, Firefox, WebKit | 12           |
-| `E2ETests`    | 3           | Chromium, Firefox, WebKit | 9            |
-| **Total** | **7** | **3**               | **21** |
-
-### Test Scenarios
-
-**LoginTests**
-
-- `SuccessfulLogin_AsStandardUser` - Valid login, verify inventory loads
-- `FailedLogin_AsLockedOutUser` - Locked user, verify error message
-- `FailedLogin_AsInvalidUser` - Wrong credentials, verify error
-- `FailedLogin_WithEmptyCredentials` - No input, verify validation
-
-**E2ETests**
-
-- `CompletePurchaseFlow` - Login → Add 2 items → Cart → Checkout → Complete → Back Home
-- `LogoutFlow` - Login → Open Menu → Logout → Verify redirect
-- `VerifyInventoryItems` - Login → Verify 6 items → Check name & price
-
----
-
-## 🔧 Adding New Tests
-
-### 1. Add test data (if needed)
-
-Edit `test-data/test-data.json`.
-
-### 2. Create a Page Object (if needed)
-
-```csharp
-// src/AutoVD.Framework/Pages/NewPage.cs
-public class NewPage : BasePage
-{
-    public NewPage(IPage page) : base(page) { }
-
-    public async Task DoSomethingAsync()
-    {
-        await ClickAsync(Page.Locator("#some-button"));
-    }
-}
-```
-
-### 3. Create a Test Class
-
-```csharp
-// tests/AutoVD.Tests/Tests/NewTests.cs
-[Parallelizable(ParallelScope.Self)]
-[TestFixture("Chromium", "Category", "Author")]
-[TestFixture("Firefox", "Category", "Author")]
-[TestFixture("WebKit", "Category", "Author")]
-public class NewTests : BaseTest
-{
-    public NewTests(string browserName, string category, string author)
-        : base(browserName, category, author) { }
-
-    [Test]
-    public async Task MyNewTest()
-    {
-        _test.Info("Step 1");
-        // ... assertions
-        Assert.That(condition, Is.True);
-    }
-}
-```
-
-### 4. Run
-
-```bash
-dotnet build AutoVD.Framework.slnx
-dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj --filter "FullyQualifiedName~NewTests"
-```
-
----
-
-## 🏗️ Architecture
-
-```
-┌─────────────────────────────────────────────────┐
-│                   NUnit Tests                    │
-│        (LoginTests.cs, E2ETests.cs)              │
-├─────────────────────────────────────────────────┤
-│                   BaseTest.cs                    │
-│   [SetUp] → Init Driver + ExtentTest             │
-│   [TearDown] → Report + Screenshot + Dispose     │
-├─────────────────────────────────────────────────┤
-│                  Page Objects                    │
-│  LoginPage → InventoryPage → CartPage → ...      │
-├─────────────────────────────────────────────────┤
-│                    Core                          │
-│  PlaywrightDriver | ConfigReader | TestDataLoader│
-├─────────────────────────────────────────────────┤
-│                 Config & Data                    │
-│  appsettings.json | test-data.json               │
-├─────────────────────────────────────────────────┤
-│                    Output                        │
-│  Reports/ExtentReport.html | Reports/Screenshots │
-└─────────────────────────────────────────────────┘
-```
-
----
-
-## 📦 Dependencies
-
-| Package                                       | Version | Purpose                          |
-| --------------------------------------------- | ------- | -------------------------------- |
-| `Microsoft.Playwright`                      | 1.59.0  | Browser automation               |
-| `Microsoft.Playwright.NUnit`                | 1.59.0  | Playwright + NUnit integration   |
-| `NUnit`                                     | 4.3.2   | Test framework                   |
-| `NUnit3TestAdapter`                         | 5.0.0   | Visual Studio / CLI test runner  |
-| `ExtentReports`                             | 5.0.4   | HTML reporting with tags/authors |
-| `Newtonsoft.Json`                           | 13.0.4  | JSON serialization               |
-| `Microsoft.Extensions.Configuration`        | 10.0.7  | Configuration management         |
-| `Microsoft.Extensions.Configuration.Binder` | 10.0.7  | Config to POCO binding           |
-| `Microsoft.Extensions.Configuration.Json`   | 10.0.7  | JSON config file support         |
-
----
-
-## 💡 Quick Reference
-
-| Task                   | Command                                                                                 |
-| ---------------------- | --------------------------------------------------------------------------------------- |
-| Build                  | `dotnet build AutoVD.Framework.slnx`                                                  |
-| All tests              | `dotnet test tests/AutoVD.Tests/AutoVD.Tests.csproj`                                  |
-| One test, one browser  | `dotnet test ... --filter "FullyQualifiedName~TestName&FullyQualifiedName~Chromium"`  |
-| One test, all browsers | `dotnet test ... --filter "FullyQualifiedName~TestName"`                              |
-| All tests, one browser | `dotnet test ... --filter "FullyQualifiedName~Chromium"`                              |
-| Test name contains     | `dotnet test ... --filter "FullyQualifiedName~Login"` (runs all with "Login" in name) |
-| Multiple tests (OR)    | `dotnet test ... --filter "FullyQualifiedName~Login\|FullyQualifiedName~Logout"`       |
-| Headed mode            | `HEADED=true dotnet test ...`                                                         |
-| Headed + slow motion   | `HEADED=true SLOWMO=500 dotnet test ...`                                              |
-| View report            | Open `Reports/ExtentReport_*.html` in browser                                         |
+MIT. See [`LICENSE`](LICENSE).
